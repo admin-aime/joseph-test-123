@@ -1,0 +1,52 @@
+# Project Rules
+
+This project uses AIME for development assistance with automatic state tracking.
+
+## Current Plan and TODOs
+
+### Plan
+## Plan for Calculator App Development
+
+  ### Approach:
+  Create a modern, responsive calculator using React and Vite with clean, modular components
+
+  ### TODOs:
+  [ ] Set up Vite project with React
+  [ ] Create basic project structure
+  [ ] Implement calculator UI
+  [ ] Add calculator logic
+  [ ] Style the calculator
+  [ ] Add basic arithmetic operations
+  [ ] Implement error handling
+
+### TODOs
+[ ] Set up Vite project with React
+[ ] Create basic project structure
+[ ] Implement calculator UI
+[ ] Add calculator logic
+[ ] Style the calculator
+[ ] Add basic arithmetic operations
+[ ] Implement error handling
+
+# Lessons Learned
+
+## User Specified Lessons
+(No lessons documented yet)
+
+## AIME Learned  
+(No lessons documented yet)
+
+# Scratchpad
+
+## Current Task
+No active task
+
+## Progress
+[X] Project setup complete
+
+## Notes
+- Project uses AIME for AI-assisted development
+- All project state is automatically tracked
+
+## Next Steps
+- Start working on development goals
