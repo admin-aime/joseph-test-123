@@ -5,19 +5,19 @@ This project uses AIME for development assistance with automatic state tracking.
 ## Current Plan and TODOs
 
 ### Plan
-## Plan for Calculator App Development
+## Plan for Banana Calculator Enhancement
 
   ### Approach:
-  Create a modern, responsive calculator using React and Vite with clean, modular components
+  Create a playful, banana-themed calculator with dark mode toggle, using React and styled-components for dynamic theming
 
   ### TODOs:
-  [ ] Set up Vite project with React
-  [ ] Create basic project structure
-  [ ] Implement calculator UI
-  [ ] Add calculator logic
-  [ ] Style the calculator
-  [ ] Add basic arithmetic operations
-  [ ] Implement error handling
+  [ ] Update project dependencies
+  [ ] Create banana-themed color palette
+  [ ] Implement dark mode toggle
+  [ ] Style calculator with banana-inspired design
+  [ ] Add banana-related UI elements
+  [ ] Implement theme switching logic
+  [ ] Add fun banana-related interactions
 
 ### TODOs
 [ ] Set up Vite project with React
@@ -27,6 +27,13 @@ This project uses AIME for development assistance with automatic state tracking.
 [ ] Style the calculator
 [ ] Add basic arithmetic operations
 [ ] Implement error handling
+[ ] Update project dependencies
+[ ] Create banana-themed color palette
+[ ] Implement dark mode toggle
+[ ] Style calculator with banana-inspired design
+[ ] Add banana-related UI elements
+[ ] Implement theme switching logic
+[ ] Add fun banana-related interactions
 
 # Lessons Learned
 

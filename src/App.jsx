@@ -1,91 +1,37 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+  import { ThemeProvider, createGlobalStyle } from 'styled-components';
+  import { lightTheme, darkTheme } from './theme';
+  import Calculator from './Calculator';
+
+  const GlobalStyle = createGlobalStyle`
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background-color: ${props => props.theme.background};
+      transition: all 0.3s ease;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+  `;
 
   function App() {
-    const [display, setDisplay] = useState('0')
-    const [firstOperand, setFirstOperand] = useState(null)
-    const [operator, setOperator] = useState(null)
-    const [waitingForSecondOperand, setWaitingForSecondOperand] = useState(false)
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
-    const inputDigit = (digit) => {
-      if (waitingForSecondOperand) {
-        setDisplay(String(digit))
-        setWaitingForSecondOperand(false)
-      } else {
-        setDisplay(display === '0' ? String(digit) : display + digit)
-      }
-    }
-
-    const inputDecimal = () => {
-      if (!display.includes('.')) {
-        setDisplay(display + '.')
-      }
-    }
-
-    const clearDisplay = () => {
-      setDisplay('0')
-      setFirstOperand(null)
-      setOperator(null)
-      setWaitingForSecondOperand(false)
-    }
-
-    const performOperation = (nextOperator) => {
-      const inputValue = parseFloat(display)
-
-      if (firstOperand === null) {
-        setFirstOperand(inputValue)
-      } else if (operator) {
-        const result = calculate(firstOperand, inputValue, operator)
-        setDisplay(String(result))
-        setFirstOperand(result)
-      }
-
-      setWaitingForSecondOperand(true)
-      setOperator(nextOperator)
-    }
-
-    const calculate = (firstOperand, secondOperand, operator) => {
-      switch (operator) {
-        case '+':
-          return firstOperand + secondOperand
-        case '-':
-          return firstOperand - secondOperand
-        case '*':
-          return firstOperand * secondOperand
-        case '/':
-          return firstOperand / secondOperand
-        default:
-          return secondOperand
-      }
-    }
+    const toggleTheme = () => {
+      setIsDarkMode(!isDarkMode);
+    };
 
     return (
-      <div className="calculator">
-        <div className="display">{display}</div>
-        <div className="buttons">
-          <button onClick={() => clearDisplay()}>AC</button>
-          <button onClick={() => performOperation('/')} className="operator">/</button>
-          <button onClick={() => performOperation('*')} className="operator">*</button>
-          
-          <button onClick={() => inputDigit(7)}>7</button>
-          <button onClick={() => inputDigit(8)}>8</button>
-          <button onClick={() => inputDigit(9)}>9</button>
-          <button onClick={() => performOperation('-')} className="operator">-</button>
-          
-          <button onClick={() => inputDigit(4)}>4</button>
-          <button onClick={() => inputDigit(5)}>5</button>
-          <button onClick={() => inputDigit(6)}>6</button>
-          <button onClick={() => performOperation('+')} className="operator">+</button>
-          
-          <button onClick={() => inputDigit(1)}>1</button>
-          <button onClick={() => inputDigit(2)}>2</button>
-          <button onClick={() => inputDigit(3)}>3</button>
-          <button onClick={() => inputDigit(0)}>0</button>
-          
-          <button onClick={() => inputDecimal()}>.</button>
-          <button onClick={() => performOperation('=')} className="equals">=</button>
-        </div>
-      </div>
-    )
+      <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+        <GlobalStyle />
+        <Calculator 
+          isDarkMode={isDarkMode} 
+          toggleTheme={toggleTheme} 
+        />
+      </ThemeProvider>
+    );
   }
 
-  export default App
+  export default App;
