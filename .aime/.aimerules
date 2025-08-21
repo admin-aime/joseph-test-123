@@ -5,19 +5,17 @@ This project uses AIME for development assistance with automatic state tracking.
 ## Current Plan and TODOs
 
 ### Plan
-## Plan for Banana Calculator Enhancement
+## Plan for Banana Calculator Restoration
 
   ### Approach:
-  Create a playful, banana-themed calculator with dark mode toggle, using React and styled-components for dynamic theming
+  Restore full calculator functionality and enhance banana theming
 
   ### TODOs:
-  [ ] Update project dependencies
-  [ ] Create banana-themed color palette
-  [ ] Implement dark mode toggle
-  [ ] Style calculator with banana-inspired design
-  [ ] Add banana-related UI elements
-  [ ] Implement theme switching logic
-  [ ] Add fun banana-related interactions
+  [ ] Restore complete calculator layout
+  [ ] Add more banana-themed design elements
+  [ ] Ensure monkey interactions work with calculator
+  [ ] Create banana-inspired button styles
+  [ ] Add banana-related calculation features
 
 ### TODOs
 [ ] Set up Vite project with React
@@ -34,6 +32,16 @@ This project uses AIME for development assistance with automatic state tracking.
 [ ] Add banana-related UI elements
 [ ] Implement theme switching logic
 [ ] Add fun banana-related interactions
+[ ] Add monkey emoji/icon
+[ ] Create monkey-related sound effects
+[ ] Implement monkey animations
+[ ] Add banana-related calculation Easter eggs
+[ ] Create monkey interaction on specific calculator actions
+[ ] Restore complete calculator layout
+[ ] Add more banana-themed design elements
+[ ] Ensure monkey interactions work with calculator
+[ ] Create banana-inspired button styles
+[ ] Add banana-related calculation features
 
 # Lessons Learned
 
