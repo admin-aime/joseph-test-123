@@ -5,17 +5,13 @@ This project uses AIME for development assistance with automatic state tracking.
 ## Current Plan and TODOs
 
 ### Plan
-## Plan for Banana Calculator Restoration
-
-  ### Approach:
-  Restore full calculator functionality and enhance banana theming
+## Plan for Adding Sound Effects
 
   ### TODOs:
-  [ ] Restore complete calculator layout
-  [ ] Add more banana-themed design elements
-  [ ] Ensure monkey interactions work with calculator
-  [ ] Create banana-inspired button styles
-  [ ] Add banana-related calculation features
+  [ ] Create sound effect files
+  [ ] Update Calculator component to use sound effects
+  [ ] Ensure sounds play on interactions
+  [ ] Add volume control
 
 ### TODOs
 [ ] Set up Vite project with React
@@ -42,6 +38,10 @@ This project uses AIME for development assistance with automatic state tracking.
 [ ] Ensure monkey interactions work with calculator
 [ ] Create banana-inspired button styles
 [ ] Add banana-related calculation features
+[ ] Create sound effect files
+[ ] Update Calculator component to use sound effects
+[ ] Ensure sounds play on interactions
+[ ] Add volume control
 
 # Lessons Learned
 

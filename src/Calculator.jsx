@@ -60,6 +60,13 @@ import React, { useState, useRef } from 'react';
     }
   `;
 
+  const VolumeControl = styled.input`
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+  `;
+
   const BananaContainer = styled.div`
     position: absolute;
     top: 10px;
@@ -80,22 +87,29 @@ import React, { useState, useRef } from 'react';
   function Calculator({ isDarkMode, toggleTheme }) {
     const [display, setDisplay] = useState('0');
     const [monkeyMood, setMonkeyMood] = useState('🐒');
-    const monkeyCheerSound = useRef(null);
-    const bananaSound = useRef(null);
+    const [volume, setVolume] = useState(0.5);
+
+    const monkeyCheerSound = useRef(new Audio('/sounds/monkey-cheer.mp3'));
+    const bananaSound = useRef(new Audio('/sounds/banana-sound.mp3'));
+
+    // Adjust volume for both sounds
+    React.useEffect(() => {
+      if (monkeyCheerSound.current) monkeyCheerSound.current.volume = volume;
+      if (bananaSound.current) bananaSound.current.volume = volume;
+    }, [volume]);
 
     const handleMonkeyClick = () => {
       const moods = ['🐒', '🙊', '🐵', '🤪'];
       const randomMood = moods[Math.floor(Math.random() * moods.length)];
       setMonkeyMood(randomMood);
       
-      // Commented out sound for WebContainer compatibility
-      // if (monkeyCheerSound.current) monkeyCheerSound.current.play();
+      if (monkeyCheerSound.current) monkeyCheerSound.current.play();
     };
 
     const handleNumber = (num) => {
       // Banana Easter egg
       if (display === '0' && num === '8') {
-        // if (bananaSound.current) bananaSound.current.play();
+        if (bananaSound.current) bananaSound.current.play();
         setDisplay('🍌');
         return;
       }
@@ -109,8 +123,10 @@ import React, { useState, useRef } from 'react';
         
         // Monkey-themed calculation results
         if (result === 42) {
+          if (monkeyCheerSound.current) monkeyCheerSound.current.play();
           setDisplay('🐒 Monkey Wisdom! 🍌');
         } else if (result % 7 === 0) {
+          if (bananaSound.current) bananaSound.current.play();
           setMonkeyMood('🤩');
           setDisplay(result.toString() + ' 🍌');
         } else {
@@ -124,6 +140,10 @@ import React, { useState, useRef } from 'react';
     const clear = () => {
       setDisplay('0');
       setMonkeyMood('🐒');
+    };
+
+    const handleVolumeChange = (e) => {
+      setVolume(parseFloat(e.target.value));
     };
 
     return (
@@ -170,6 +190,15 @@ import React, { useState, useRef } from 'react';
           <Button onClick={calculate}>=</Button>
           <Button onClick={() => handleNumber('+')}>+</Button>
         </div>
+
+        <VolumeControl 
+          type="range" 
+          min="0" 
+          max="1" 
+          step="0.1" 
+          value={volume} 
+          onChange={handleVolumeChange}
+        />
       </CalculatorContainer>
     );
   }
